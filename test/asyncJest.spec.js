@@ -14,13 +14,13 @@ describe("o retorno do telefonema", () => {
   test("atende", () => {
     expect.assertions(1);
     return answerPhone('Alô!?').then((answer) => {
-      expect(answer).toMatch('Oi!');
+      expect(answer).toBe('Oi!');
     });
   });
   test("ocupado", () => {
     expect.assertions(1);
     return answerPhone().catch((error) => {
-      expect(error).toMatch('Infelizmente não podemos atender...');
+      expect(error).toBe('Infelizmente não podemos atender...');
     });
   });
 });
