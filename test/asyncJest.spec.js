@@ -10,11 +10,16 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// 1. Jest Assíncrono
+// Complete os testes do arquivo test/asyncJest.spec.js 
+// para que funcionem com código assíncrono.
+
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
+  test("atende", async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
-    expect(answerPhone(true)).resolves.toMatch('Oi!');
+    expect.assertions(1);
+    await expect(answerPhone(true)).resolves.toMatch('Oi!');
   });
   test("ocupado", () => {
     // assert.fail();
