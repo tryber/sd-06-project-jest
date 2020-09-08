@@ -7,7 +7,7 @@ No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a
 Faça um mock da função fetchURL() de forma que,
 independa de chamadas de API e retorne as seguintes informações do Tunico:
 - Gênero: Masculino
-- Primeiro nome: Antônio
+- Primeiro nome: Antônio 
 - Último nome: Britto
 - País: Brasil
 - Email: tunico@bol.com.br (Sim, é um email do bol mesmo...)

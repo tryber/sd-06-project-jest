@@ -10,7 +10,7 @@ Sua missão aqui é:
   - Use a função randomAttack do objeto adventure
   que remove um dos aventureiros toda vez que é chamada,
   ela deve funcionar entre cada teste.
-  Opcional:
+  Opcional: 
   - Para ficar mais visível, imprima na tela após cada teste o grupo de aventureiros restante.
   - No fim dos testes, imprima uma mensagem com o nome do aventureiro que sobreviveu.
 
