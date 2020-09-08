@@ -20,7 +20,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack(adventure.specialists);
+    const survivors = adventure.specialists.flatMap(hero => hero.nome);
+    console.log(`Sobrevivente(s) : ${survivors}`);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
