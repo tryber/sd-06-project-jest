@@ -1,4 +1,4 @@
-//aloízio-borges-santos-coelho commit inicial
+//aloízio-borges-santos-coelho commit initial
 const answerPhone = require("../src/asyncJest");
 
 /*
