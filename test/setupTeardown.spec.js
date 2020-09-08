@@ -21,20 +21,31 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  })
+
+  // afterEach
+  // adventure.randomAttack = jest.fn();
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
+    console.log('Survivors ',adventure.specialists);
   });
   test('depois da segunda aventura', () => {
     expect(adventure.specialists.length).toBe(4);
+    console.log('Survivors ',adventure.specialists);
   });
   test('depois da terceira aventura', () => {
     expect(adventure.specialists.length).toBe(3);
+    console.log('Survivors ',adventure.specialists);
   });
   test('depois da quarta aventura', () => {
     expect(adventure.specialists.length).toBe(2);
+    console.log('Survivors ',adventure.specialists);
   });
   test('depois da quinta aventura', () => {
     expect(adventure.specialists.length).toBe(1);
+    console.log('the last survivor ',adventure.specialists);
   });
 });
