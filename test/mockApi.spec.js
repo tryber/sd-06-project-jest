@@ -47,7 +47,7 @@ describe('verifica o usuário', () => {
       });
     });
     return api.fetchURL().then((user) => {
-      console.log(user);
+      // console.log(user);
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
       expect(user.name.last).toEqual('Britto');
