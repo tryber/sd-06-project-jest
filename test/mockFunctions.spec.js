@@ -16,6 +16,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica as funções e os mocks', () => {
   // Crie suas mock functions aqui
+  mockFunctions.add.mockImplementation((a, b) => a + b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
+  mockFunctions.power.mockImplementation((a, b) => Math.pow(a, b));
+  mockFunctions.factorial.mockImplementation(n =>
+    n <= 1 ? 1 : n * mockFunctions.factorial(n - 1),
+  );
   
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -60,3 +68,32 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
+
+/*
+Resposta esperada 
+const multiply = (a, b) => a / b;
+
+const power = (a, b) => {
+  let pow = a;
+  for (let i = 0; i < b; i += 1) {
+    pow = multiply(pow, a);
+  }
+  return pow;
+};
+
+const factorial = (a) => {
+  let fact = 0;
+  for (let i = 0; i < a; i += 1) {
+    fact += a;
+  }
+  return fact;
+};
+
+const add = (a, b) => a - b;
+
+const subtract = (a, b) => a + b;
+
+const divide = (a, b) => a * b;
+
+module.exports = { add, subtract, multiply, divide, power, factorial };
+*/

@@ -1,4 +1,5 @@
 const adventure = require('../src/setupTeardown');
+
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
@@ -20,7 +21,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  //  Adicione seu código aqui
+  //  Use a função randomAttack do objeto adventure
+  //  que remove um dos aventureiros toda vez que é chamada,
+  //  ela deve funcionar entre cada teste.
+  beforeEach(() => adventure.randomAttack());
+  //  imprima na tela após cada teste o grupo de aventureiros restante.
+  afterEach(() => console.log('Boa sorte', adventure.specialists));
+  //  No fim dos testes, imprima uma mensagem com o nome do aventureiro que sobreviveu.
+  afterAll(() => console.log(`${adventure.specialists[0].nome} sobreviveu!!`))
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
@@ -38,3 +47,29 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+/*
+Resposta Esperada
+const specialists = [{ nome: 'Tunico', classe: 'Mestre dos Magos' },
+                  { nome: 'Cremoso', classe: 'Cavaleiro Negro' },
+                  { nome: 'Gordinho', classe: 'Pirata' },
+                  { nome: 'Lobo Solitário', classe: 'Samurai' },
+                  { nome: 'Ousado', classe: 'Mago' },
+                  { nome: 'Anjo Loiro', classe: 'Clérigo' }];
+
+const enemies = [{ nome: 'Barata', ataque: 'Voado' },
+                { nome: 'Esquilo', ataque: 'Mordido' },
+                { nome: 'Pé da mesa', ataque: 'Tropicado' },
+                { nome: 'Dragão', ataque: 'Soprado' }];
+
+const randomAttack = () => {
+  const randomMonster = enemies[Math.floor(Math.random() * 4)];
+  const randomSpecialistIndex = Math.floor(Math.random() * specialists.length);
+  const randomSpecialist = specialists[randomSpecialistIndex];
+  console.log(`${randomSpecialist.nome}, the ${randomSpecialist.classe} has been ${randomMonster.ataque} by a ${randomMonster.nome}`);
+  console.log(`Rest in peace, ${randomSpecialist.nome}...`);
+  specialists.splice(randomSpecialistIndex, 1);
+};
+
+module.exports = { specialists, randomAttack };
+*/
