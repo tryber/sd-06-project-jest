@@ -19,22 +19,24 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+describe('Who will be the last man standing?', () => {
+  beforeEach(() => adventure.randomAttack());
+  afterEach(() => console.log('Players remaining', adventure.specialists));
+  afterAll(() => console.log(`${adventure.specialists[0].nome} was the last man standing! (pure luck)`))
 
-  test('depois da primeira aventura', () => {
+  test('after first round', () => {
     expect(adventure.specialists.length).toBe(5);
   });
-  test('depois da segunda aventura', () => {
+  test('after second round', () => {
     expect(adventure.specialists.length).toBe(4);
   });
-  test('depois da terceira aventura', () => {
+  test('after third round', () => {
     expect(adventure.specialists.length).toBe(3);
   });
-  test('depois da quarta aventura', () => {
+  test('after fourth round', () => {
     expect(adventure.specialists.length).toBe(2);
   });
-  test('depois da quinta aventura', () => {
+  test('after fifth round', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
