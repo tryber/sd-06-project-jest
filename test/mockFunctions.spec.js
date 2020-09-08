@@ -14,8 +14,10 @@ O foco aqui é a utilização de mock functions.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+jest.mock('../src/mockFunctions');
+
 describe('verifica as funções e os mocks', () => {
-  mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
+  mockFunctions.add.mockImplementation((a, b) => a + b);
 
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -25,7 +27,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.add(7, 26)).toEqual(33);
   });
 
-  mockFunctions.subtract = jest.fn().mockImplementation((a, b) => a - b);
+  mockFunctions.subtract.mockImplementation((a, b) => a - b);
 
   test('testa função subtract', () => {
     expect(mockFunctions.subtract(899, 35)).toEqual(864);
@@ -35,7 +37,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.subtract(-133, -29)).toEqual(-104);
   });
 
-  mockFunctions.multiply = jest.fn().mockImplementation((a, b) => a * b);
+  mockFunctions.multiply.mockImplementation((a, b) => a * b);
 
   test('testa função multiply', () => {
     expect(mockFunctions.multiply(1, 2)).toEqual(2);
@@ -45,7 +47,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.multiply(19, 23)).toEqual(437);
   });
 
-  mockFunctions.divide = jest.fn().mockImplementation((a, b) => a / b);
+  mockFunctions.divide.mockImplementation((a, b) => a / b);
 
   test('testa função divide', () => {
     expect(mockFunctions.divide(169, 13)).toEqual(13);
@@ -55,7 +57,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.divide(1331, 11)).toEqual(121);
   });
 
-  mockFunctions.power = jest.fn().mockImplementation((a, b) => a ** b);
+  mockFunctions.power.mockImplementation((a, b) => a ** b);
 
   test('testa função power', () => {
     expect(mockFunctions.power(10, 2)).toEqual(100);
@@ -65,7 +67,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
 
-  mockFunctions.factorial = jest.fn().mockImplementation((a) => {
+  mockFunctions.factorial.mockImplementation((a) => {
     let fact = 1;
     for (let i = 1; i <= a; i += 1) {
       fact *= i;
