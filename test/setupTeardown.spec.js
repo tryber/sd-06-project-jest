@@ -26,7 +26,7 @@ describe('quem sobreviveu?', () => {
     adventure.randomAttack();
   });
   afterEach(() => {
-    console.log('Seguiram na aventura...');
+    console.log('Quem sobreviveu?');
     adventure.specialists.forEach(hero => {
       console.log(`${hero.nome}, o ${hero.classe}`)
     });
