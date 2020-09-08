@@ -127,7 +127,7 @@ Exemplo de resposta da API randomuser.me:
 
 ### 4. Setup e Teardown
 
-Intercale funções entre os testes definidos no arquivo `test/setupTeardown.js`.
+Intercale funções entre os testes definidos no arquivo `test/setupTeardown.spec..js`.
 
 ---
 
