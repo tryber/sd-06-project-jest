@@ -1,5 +1,5 @@
 const adventure = require('../src/setupTeardown');
-const { randomAttack } = require('../src/setupTeardown');
+const { randomAttack, specialists } = require('../src/setupTeardown');
 /*
 Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
 O grupo parte em direção ao sucesso, mas,
@@ -25,6 +25,14 @@ describe('quem sobreviveu?', () => {
   beforeEach(() => {
     randomAttack();
   });
+
+  afterEach(() => {
+    for (i in specialists) {
+      console.log(`${adventure.specialists[i].nome} ainda está vivo`)
+    }
+  });
+
+  afterAll(() => console.log(`Depois da sangrenta batalha, apenas ${adventure.specialists[0].nome} sobreviveu! Parabéns ${adventure.specialists[0].nome}, você é o novo mestre dos magos!`))
   
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
