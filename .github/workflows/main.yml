@@ -25,5 +25,5 @@ jobs:
         if: steps.wait-for-build.outputs.conclusion == 'success'
         with:
           evaluation-data: ${{ steps.jest.outputs.result }}
-          environment: staging
+          environment: production
           pr-number: ${{ steps.jest.outputs.pr-number }}
