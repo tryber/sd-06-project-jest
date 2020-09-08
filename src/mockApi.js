@@ -14,5 +14,5 @@ const fetchURL = () => new Promise(function (resolve, reject) {
     res.on('close', () => resolve(JSON.parse(userInfo).results[0]));
   });
 });
-
+// fetchURL().then(object => console.log(object));
 module.exports = { fetchURL };
