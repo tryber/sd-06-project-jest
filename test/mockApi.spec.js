@@ -1,10 +1,14 @@
 const api = require('../src/mockApi');
+// const { fetchURL } = require('../src/mockApi');
 
 /*
-A função fetchURL retorna um JSON com informações de um usuário aleatório buscadas da API 'randomuser.me'.
-No entanto, nos testes abaixo, queremos que todas as vezes que chamarmos a API a resposta contenha as informações do nosso adminis..Cof! Cof!.. programador favorito, Tunicão.
+A função fetchURL retorna um JSON com informações de um usuário aleatório
+buscadas da API 'randomuser.me'.
+No entanto, nos testes abaixo,
+queremos que todas as vezes que chamarmos a API a resposta contenha as
+informações do nosso adminis..Cof! Cof!.. programador favorito, Tunicão.
 
-Faça um mock da função fetchURL() de forma que,
+Faça um mock da função fetchURL() de forma que
 independa de chamadas de API e retorne as seguintes informações do Tunico:
 - Gênero: Masculino
 - Primeiro nome: Antônio
@@ -22,18 +26,39 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+const expectedValue = {
+  gender: 'male',
+  name: { first: 'Antônio', last: 'Britto' },
+  location: {
+    country: 'Brazil',
+  },
+  email: 'tunico@bol.com.br',
+  login: {
+    username: 'tunicao123',
+    password: '1234567890',
+  },
+};
 
-  test('verifica se o usuário é o tunico', async () => {
-    return api.fetchURL().then((user) => {
-      expect(user.gender).toEqual('male');
-      expect(user.name.first).toEqual('Antônio');
-      expect(user.name.last).toEqual('Britto');
-      expect(user.location.country).toEqual('Brazil');
-      expect(user.email).toEqual('tunico@bol.com.br');
-      expect(user.login.username).toEqual('tunicao123');
-      expect(user.login.password).toEqual('1234567890');
-    });
-  });
+describe('verifica o usuário', () => {
+  // I learnt how to apply spyOn from other students PR's and jest's documentation
+  const mockFunc = jest.spyOn(api, 'fetchURL');
+
+  /*
+  I used ResolvedValue instead of ReturnValue because we need the request return
+  due to api.fetchURL to be a promise
+  below ResolvedValue sugar implementation
+  jest.fn().mockImplementation(() => Promise.resolve(value));
+  */
+
+  mockFunc.mockResolvedValue(expectedValue);
+
+  test('verifica se o usuário é o tunico', async () => api.fetchURL().then((user) => {
+    expect(user.gender).toEqual('male');
+    expect(user.name.first).toEqual('Antônio');
+    expect(user.name.last).toEqual('Britto');
+    expect(user.location.country).toEqual('Brazil');
+    expect(user.email).toEqual('tunico@bol.com.br');
+    expect(user.login.username).toEqual('tunicao123');
+    expect(user.login.password).toEqual('1234567890');
+  }));
 });
