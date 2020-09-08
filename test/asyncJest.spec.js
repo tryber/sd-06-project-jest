@@ -10,13 +10,17 @@ a função recebe como parâmetro true e false, respectivamente.
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe("o retorno do telefonema", () => {  
-  test("atende", () => {
+describe("o retorno do telefonema", () => {
+  test("atende", async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
+    const resolve = 'Oi!';
+    await expect(answerPhone(true)).resolves.toEqual(resolve);
   });
-  test("ocupado", () => {
+  test("ocupado", async () => {
     // assert.fail();
     // Insira seu teste assíncrono aqui
+    const reject = 'Infelizmente não podemos atender...';
+    await expect(answerPhone(false)).rejects.toEqual(reject);
   });
 });
