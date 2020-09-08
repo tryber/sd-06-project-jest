@@ -15,7 +15,29 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
+  const mockAdd = jest.spyOn(mockFunctions, 'add')
+  .mockImplementation((a, b) => { return a + b });
+
+  const mockSubtract = jest.spyOn(mockFunctions, 'subtract')
+  .mockImplementation((a, b) => { return a - b });
+
+  const mockMultiply = jest.spyOn(mockFunctions, 'multiply')
+  .mockImplementation((a, b) => { return a * b });
+
+  const mockDivide = jest.spyOn(mockFunctions, 'divide')
+  .mockImplementation((a, b) => { return a / b });
+
+  const mockPower = jest.spyOn(mockFunctions, 'power')
+  .mockImplementation((a, b) => { return a ** b });
+
+  const mockFactorial = jest.spyOn(mockFunctions, 'factorial')
+  .mockImplementation((a) => {
+    let fact = 1;
+    for (let i = a; i >= 1; i -= 1) {
+      fact *= i;
+    }
+    return fact;
+  });
   
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
@@ -24,6 +46,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.add(13, -188)).toEqual(-175);
     expect(mockFunctions.add(7, 26)).toEqual(33);
   });
+
   test('testa função subtract', () => {
     expect(mockFunctions.subtract(899, 35)).toEqual(864);
     expect(mockFunctions.subtract(-17, 333)).toEqual(-350);
