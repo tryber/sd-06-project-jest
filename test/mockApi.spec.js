@@ -39,8 +39,8 @@ describe('verifica o usuário', () => {
     },
   };
 
-  const fetchMock = jest.spyOn(api, 'fetchURL');
-  fetchMock.mockResolvedValue(user);
+  const mock = jest.spyOn(api, 'fetchURL');
+  mock.mockResolvedValue(user);
 
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
