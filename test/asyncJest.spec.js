@@ -1,7 +1,7 @@
 const answerPhone = require("../src/asyncJest");
 
 /*
-A função answerPhone recebe um parâmetro boleano.
+A função answerPhone recebe um parâmetro booleano.
 Dependendo do parâmetro o retorno da função varia, veja a função no arquivo 'src/asyncJest.js'
 
 Complete o código abaixo para testar as situações em que
@@ -11,10 +11,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
-    assert.fail();
+  test("atende", async () => {
+    // assert.fail();
+    await expect(answerPhone('answer')).resolves.toBe('Oi!');
   });
-  test("ocupado", () => {
-    assert.fail();
+  test("ocupado", async () => {
+    await expect(answerPhone()).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
