@@ -22,7 +22,7 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
-describe('verifica o usuário', () => {
+describe("verifica o usuário", () => {
   const data = {
     gender: 'male',
     name: { first: 'Antônio', last: 'Britto'},
@@ -32,7 +32,7 @@ describe('verifica o usuário', () => {
   }
   api.fetchURL = jest.fn().mockReturnValue(Promise.resolve(data));
 
-  test('verifica se o usuário é o tunico', async () => {
+  test("verifica se o usuário é o tunico", async () => {
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
