@@ -14,9 +14,11 @@ describe("o retorno do telefonema", () => {
   test("atende", () => {
     assert.fail();
     // Insira seu teste assíncrono aqui
+    return expect(answerPhone(true)).resolve.toEqual('Oi!');
   });
   test("ocupado", () => {
     assert.fail();
     // Insira seu teste assíncrono aqui
+    return expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
