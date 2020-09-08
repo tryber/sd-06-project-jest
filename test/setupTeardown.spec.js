@@ -8,7 +8,7 @@ Cada um dos testes abaixo verifica a quantidade de aventureiros após cada itera
 Sua missão aqui é:
 
   - Use a função randomAttack do objeto adventure
-  que remove um dos aventureiros toda vez que é chamada,
+    que remove um dos aventureiros toda vez que é chamada,
   ela deve funcionar entre cada teste.
   Opcional:
   - Para ficar mais visível, imprima na tela após cada teste o grupo de aventureiros restante.
