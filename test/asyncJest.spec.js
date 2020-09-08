@@ -12,11 +12,11 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", () => {
-    let answerPhone = jest.fn().mockImplementation(()=> 'Oi!');
-    expect(answerPhone()).toBe('Oi!');
+    let answer = true;
+    return expect(answerPhone(answer)).resolves.toBe('Oi!');
   });
   test("ocupado", () => {
-    let answerPhone = jest.fn().mockImplementation(()=> 'Infelizmente não podemos atender...');
-    expect(answerPhone()).toBe('Infelizmente não podemos atender...');
+    let answer = false;
+    return expect(answerPhone(answer)).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
