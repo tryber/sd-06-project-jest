@@ -60,3 +60,5 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
+
+//iniciando o projeto...

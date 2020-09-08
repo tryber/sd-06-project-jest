@@ -38,3 +38,5 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+//iniciando o projeto...
