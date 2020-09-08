@@ -12,11 +12,13 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(true)).resolves.toBe('Oi!');
   });
+  // aqui consideramos a opcao true de retorno da answerPhone e usamos
+  // o .resolves nessa promise que volta como resolvida
   test("ocupado", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
   });
+    // aqui consideramos a opcao false de retorno da answerPhone e usamos
+  // o .rejects nessa promise que volta como falha
 });
