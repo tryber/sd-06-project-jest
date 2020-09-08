@@ -21,6 +21,12 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+    const advLeft = adventure.specialists.flatMap(adv => adv.nome);
+    console.log(`These are the ones who remain -> ${advLeft}`);
+  });
+  
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
