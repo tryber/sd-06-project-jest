@@ -22,5 +22,7 @@ describe("o retorno do telefonema", () => {
   test("ocupado", () => {
     expect.assertions(1);
     return expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
+    /*Use .rejects to unwrap the reason of a rejected promise so any other matcher can be chained. If the promise is 
+    fulfilled the assertion fails.*/
   });
 });
