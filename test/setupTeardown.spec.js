@@ -29,7 +29,7 @@ describe('quem sobreviveu?', () => {
     console.log(`Survived, ${adventure.specialists[0].nome}...`);
 
     const survivingAdventurerGroup = '';
-    survivingAdventurerGroup = adventure.specialists.map(group => group.nome);
+    survivingAdventurerGroup = adventure.specialists.flatMap(group => group.nome);
     console.log(`Surviving's group: ${survivingAdventurerGroup} `);
   });
 
