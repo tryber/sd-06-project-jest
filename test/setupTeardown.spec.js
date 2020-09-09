@@ -21,6 +21,9 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
@@ -38,3 +41,19 @@ describe('quem sobreviveu?', () => {
     expect(adventure.specialists.length).toBe(1);
   });
 });
+
+// REFERENCIAS
+// SITES:
+// https://www.javascriptprogressivo.net
+// https://www.leighhalliday.com/
+// https://codewithhugo.com/jest-fn-spyon-stub-mock/
+// https://jestjs.io/en/
+// https://spectrum.chat/about
+// https://stackoverflow.com/
+
+// GITHUB = ANDERSONS STUBER, PAULO LINS
+// https://github.com/HugoDF/jest-spy-mock-stub-reference
+
+// YOUTUBE = "TANTAUM" DE CANAL
+
+// AGRADECIMENTOS ESPECIAIS: AND, LETICIA E PAULO LINS.

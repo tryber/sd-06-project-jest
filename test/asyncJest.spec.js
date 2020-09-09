@@ -12,11 +12,27 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", () => {
-    assert.fail();
     // Insira seu teste assíncrono aqui
+    return expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test("ocupado", () => {
-    assert.fail();
     // Insira seu teste assíncrono aqui
+    return expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
   });
 });
+
+// REFERENCIAS
+// SITES:
+// https://www.javascriptprogressivo.net
+// https://www.leighhalliday.com/
+// https://codewithhugo.com/jest-fn-spyon-stub-mock/
+// https://jestjs.io/en/
+// https://spectrum.chat/about
+// https://stackoverflow.com/
+
+// GITHUB = ANDERSONS STUBER, PAULO LINS
+// https://github.com/HugoDF/jest-spy-mock-stub-reference
+
+// YOUTUBE = "TANTAUM" DE CANAL
+
+// AGRADECIMENTOS ESPECIAIS: AND, LETICIA E PAULO LINS.
