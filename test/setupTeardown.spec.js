@@ -28,9 +28,9 @@ describe('quem sobreviveu?', () => {
   afterEach(() => {
     console.log(`Survived, ${adventure.specialists[0].nome}...`);
 
-    const survivingAdventurerGroup = '';
+    let survivingAdventurerGroup = '';
     survivingAdventurerGroup = adventure.specialists.flatMap(group => group.nome);
-    console.log(`Surviving's group: ${survivingAdventurerGroup} `);
+    console.log(`Surviving's group: ${survivingAdventurerGroup}`);
   });
 
   it('depois da primeira aventura', () => {
