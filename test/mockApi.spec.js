@@ -39,21 +39,9 @@ describe('verifica o usuário', () => {
       password: '1234567890',
     },
   };
-  api.fetchURL = jest.fn(() => Promise.resolve(
+  api.fetchURL = jest.fn(() => Promise.resolve({
     user;
-  ));
-  // const fetchURL = () => new Promise(function (resolve, reject) {
-  //   https.get(url, (res) => {
-  //     res.setEncoding('utf8');
-  //     let userInfo = '';
-  //     res.on('data', (data) => {
-  //       userInfo += data;
-  //     });
-  //     res.on('error', reject);
-  //     res.on('close', () => resolve(JSON.parse(userInfo).results[0]));
-  //   });
-  // });
-
+  }));
   test('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
