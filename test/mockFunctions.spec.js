@@ -15,8 +15,34 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica as funções e os mocks', () => {
-  // Crie suas mock functions aqui
-  
+  mockFunctions.add = jest
+    .fn()
+    .mockImplementation((a, b) => a + b);
+
+  mockFunctions.subtract = jest
+    .fn()
+    .mockImplementation((a, b) => a - b);
+
+  mockFunctions.multiply = jest
+    .fn()
+    .mockImplementation((a, b) => a * b);
+
+  mockFunctions.divide = jest
+    .fn()
+    .mockImplementation((a, b) => a / b);
+
+  mockFunctions.power = jest
+    .fn()
+    .mockImplementation((a, b) => Math.pow(a, b));
+
+  function factorial(number) {
+    return (number != 1) ? number * factorial(number - 1) : 1;
+  }
+
+  mockFunctions.factorial = jest
+    .fn()
+    .mockImplementation(factorial);
+
   test('testa função add', () => {
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
