@@ -22,6 +22,17 @@ describe("o retorno do telefonema", () => {
 });
 
 // REFERENCIAS
+// SITES:
 // https://www.javascriptprogressivo.net
 // https://www.leighhalliday.com/
 // https://codewithhugo.com/jest-fn-spyon-stub-mock/
+// https://jestjs.io/en/
+// https://spectrum.chat/about
+// https://stackoverflow.com/
+
+// GITHUB = ANDERSONS STUBER, PAULO LINS
+// https://github.com/HugoDF/jest-spy-mock-stub-reference
+
+// YOUTUBE = "TANTAUM" DE CANAL
+
+// AGRADECIMENTOS ESPECIAIS: AND, LETICIA E PAULO LINS.

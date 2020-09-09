@@ -72,3 +72,19 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.factorial(2)).toEqual(2);
   });
 });
+
+// REFERENCIAS
+// SITES:
+// https://www.javascriptprogressivo.net
+// https://www.leighhalliday.com/
+// https://codewithhugo.com/jest-fn-spyon-stub-mock/
+// https://jestjs.io/en/
+// https://spectrum.chat/about
+// https://stackoverflow.com/
+
+// GITHUB = ANDERSONS STUBER, PAULO LINS
+// https://github.com/HugoDF/jest-spy-mock-stub-reference
+
+// YOUTUBE = "TANTAUM" DE CANAL
+
+// AGRADECIMENTOS ESPECIAIS: AND, LETICIA E PAULO LINS.
