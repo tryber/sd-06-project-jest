@@ -8,15 +8,25 @@ Complete o código abaixo para testar as situações em que
 a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
+
+Iniciando o projeto. #VQV!
 */
 
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test("atende", done => {
+    try {
+      expect(answerPhone(true)).toBe('Oi!');
+      done();
+    } catch (error) {
+      done();
+    }
   });
-  test("ocupado", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test("ocupado", done => {
+    try {
+      expect(answerPhone()).toBe('Infelizmente não podemos atender...');
+      done();
+    } catch (error) {
+      done();
+    }
   });
 });
