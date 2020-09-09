@@ -3,3 +3,18 @@
 # VSCode repo settings
 .vscode
 node_modules/
+coverage/clover.xml
+coverage/coverage-final.json
+coverage/lcov.info
+coverage/lcov-report/sorter.js
+test/asyncJest.spec.js
+coverage/lcov-report/prettify.js
+coverage/lcov-report/block-navigation.js
+coverage/lcov-report/setupTeardown.js.html
+coverage/lcov-report/mockFunctions.js.html
+coverage/lcov-report/mockApi.js.html
+coverage/lcov-report/index.html
+coverage/lcov-report/base.css
+coverage/lcov-report/prettify.css
+coverage/lcov-report/sort-arrow-sprite.png
+coverage/lcov-report/asyncJest.js.html
