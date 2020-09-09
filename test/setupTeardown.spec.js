@@ -15,13 +15,20 @@ Sua missão aqui é:
   - No fim dos testes, imprima uma mensagem com o nome do aventureiro que sobreviveu.
 
 PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
+  Tunico -> Tunico (essa foi a fácil! <3 Ao infinito e além)
+  Gordinho -> Lucas (o grande Capitão! <3)
+  Cremoso -> Nobre
+  Ousado -> Alberto (acho que ele é Mago, grande Mestre)
+  Lobo Solitário -> Leandro
+  Anjo Loiro -> Norberto
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
-
+  beforeEach( () => {
+    adventure.randomAttack();
+  })
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
   });
