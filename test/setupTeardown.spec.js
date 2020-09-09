@@ -21,6 +21,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('quem sobreviveu?', () => {
   // Adicione seu código aqui
+  beforeEach(() => adventure.randomAttack());
+
+  afterEach(() => {
+    const teachers = adventure.specialists;
+    const names = [];
+    teachers.forEach(professor => names.push(professor.nome))
+    console.log(`BATTLELOG ⚔️\n ---Still Alive--- \n-> ${names}`);
+  })
+
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
