@@ -1,7 +1,7 @@
 const mockFunctions = require('../src/mockFunctions');
 const { TestScheduler } = require('jest');
 
-/*dd
+/*
 Criamos uma série de funções com eficiência duvidosa.
 Elas estão no arquivo 'src/mockFunctions.js'.
 Crie mock functions para cada uma das operações de modo que os cálculos sejam feitos corretamente,
@@ -27,7 +27,7 @@ describe('verifica as funções e os mocks', () => {
     for (let index = a; index >= 1; index -= 1 ){
       results *= index;
    }
-   return results;
+    return results;
   });
 
   it('testa função add', () => {

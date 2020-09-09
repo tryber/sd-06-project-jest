@@ -42,7 +42,7 @@ describe('verifica o usuário', () => {
   
   api.fetchURL = jest.fn().mockResolvedValue(user);
   
-  test('verifica se o usuário é o tunico', async () => {
+  it('verifica se o usuário é o tunico', async () => {
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
