@@ -23,7 +23,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('verifica o usuário', () => {
-  const mockedFecth = jest.spyOn(mockApi, 'fetchURL');
+  const mockedFetch = jest.spyOn(mockApi, 'fetchURL');
   const jsonTunic = {
     gender: 'male',
     name: { first: 'Antônio', last: 'Britto' },
@@ -36,7 +36,7 @@ describe('verifica o usuário', () => {
       password: '1234567890',
     },
   };
-  mockedFecth.mockResolvedValue(jsonTunic);
+  mockedFetch.mockResolvedValue(jsonTunic);
 
   test('verifica se o usuário é o tunico', async () => {
     return mockApi.fetchURL().then((user) => {
