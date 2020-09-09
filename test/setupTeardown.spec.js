@@ -26,11 +26,11 @@ describe('quem sobreviveu?', () => {
   })
 afterEach (()=> {
 
-  randomAttack();
 })
 
 
   test('depois da primeira aventura', () => {
+   
     expect(adventure.specialists.length).toBe(5);
   });
   test('depois da segunda aventura', () => {
