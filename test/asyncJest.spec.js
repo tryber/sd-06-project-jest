@@ -12,11 +12,40 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(true)).resolves.toBe('Oi!');
   });
   test("ocupado", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    expect(answerPhone(false)).rejects.toBe('Infelizmente não podemos atender...');
+  });
+});
+
+describe("o retorno do telefonema - usando async", () => {
+  test("atende", async () => {
+    const answer = await answerPhone(true);
+    expect(answer).toBe('Oi!');
+  });
+  test("ocupado", async () => {
+    expect.assertions(1);
+    try {
+      await answerPhone(false);
+    } catch(error) {
+      expect(error).toBe('Infelizmente não podemos atender...');
+    }
+
+  });
+});
+
+describe("o retorno do telefonema - usando then e catch", () => {
+  expect.assertions(1);
+  test("atende", () => {
+    return answerPhone(true).then(answer => {
+      expect(answer).toBe('Oi!');
+    })
+  });
+  expect.assertions(1);
+  test("ocupado", () => {
+      return answerPhone(false).catch(error => {
+        expect(error).toBe('Infelizmente não podemos atender...');
+      })
   });
 });
