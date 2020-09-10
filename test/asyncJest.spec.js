@@ -9,15 +9,17 @@ a função recebe como parâmetro true e false, respectivamente.
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-//initializing
 
 describe("o retorno do telefonema", () => {
-  test("atende", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+  test("atende", async () => {
+    const answer = 'Hello';
+    expect.assertions(1);
+    await expect (answerPhone(true)).resolves.toEqual(answer);
   });
+
   test("ocupado", () => {
-    assert.fail();
-    // Insira seu teste assíncrono aqui
+    const deny = 'Sorry, we can not talk right now';
+    expect.assertions(1);
+    await expect (answerPhone(false)).resolves.toEqual(deny);
   });
 });
