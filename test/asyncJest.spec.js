@@ -17,7 +17,7 @@ describe("o retorno do telefonema", () => {
     await expect (answerPhone(true)).resolves.toEqual(answer);
   });
 
-  test("ocupado", () => {
+  test("ocupado", async () => {
     const deny = 'Sorry, we can not talk right now';
     expect.assertions(1);
     await expect (answerPhone(false)).resolves.toEqual(deny);
