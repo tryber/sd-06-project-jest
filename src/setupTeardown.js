@@ -19,5 +19,4 @@ const randomAttack = () => {
   console.log(`Rest in peace, ${randomSpecialist.nome}...`);
   specialists.splice(randomSpecialistIndex, 1);
 };
-
 module.exports = { specialists, randomAttack };
