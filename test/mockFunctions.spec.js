@@ -17,8 +17,6 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('verifica as funções e os mocks', () => {
   test('testa função add', () => {
     mockFunctions.add = jest.fn().mockImplementation((a, b) => a + b);
-    // service.randomNumber = jest.fn().mockImplementationOnce((a, b) => a / b);
-    // service.randomNumber = jest.fn().mockImplementation((a, b, c) => a * b * c);
     expect(mockFunctions.add(1, 2)).toEqual(3);
     expect(mockFunctions.add(8, 37)).toEqual(45);
     expect(mockFunctions.add(-11, 25)).toEqual(14);
