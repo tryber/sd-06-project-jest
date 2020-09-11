@@ -12,14 +12,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe("o retorno do telefonema", () => {
   test("atende", async () => {
-    const answer = 'Hello';
+    const resolvedAnswer = 'Oi!';
     expect.assertions(1);
-    await expect (answerPhone(true)).resolves.toEqual(answer);
+    await expect (answerPhone(true)).resolves.toEqual(resolvedAnswer);
   });
 
   test("ocupado", async () => {
-    const deny = 'Sorry, we can not talk right now';
+    const rejectedAnswer = 'Infelizmente não podemos atender...';
     expect.assertions(1);
-    await expect (answerPhone(false)).resolves.toEqual(deny);
+    await expect (answerPhone(false)).rejects.toEqual(rejectedAnswer);
   });
 });
