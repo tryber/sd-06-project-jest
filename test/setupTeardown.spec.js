@@ -20,7 +20,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  // Adicione seucódigo aqui
   beforeEach(() => adventure.randomAttack());
   afterEach(() => console.log(adventure.specialists));
 

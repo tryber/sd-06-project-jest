@@ -24,7 +24,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('verifica o usuário', () => {
   test('verifica se o usuário é o tunico', async () => {
-    const resultJson = {
+    const RESULT = {
       gender: 'male',
       name: { title: 'Ms', first: 'Antônio', last: 'Britto' },
       location: {
@@ -63,7 +63,7 @@ describe('verifica o usuário', () => {
       nat: 'IE',
     };
 
-    api.fetchURL = jest.fn().mockResolvedValue(resultJson);
+    api.fetchURL = jest.fn().mockResolvedValue(RESULT);
     return api.fetchURL().then((user) => {
       expect(user.gender).toEqual('male');
       expect(user.name.first).toEqual('Antônio');
