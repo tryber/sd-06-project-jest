@@ -20,21 +20,41 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+
+  console.log(adventure.specialists.length);
+  console.log(adventure.specialists);
 
   test('depois da primeira aventura', () => {
+    console.log(adventure.specialists.length);
+    console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(5);
   });
+  
   test('depois da segunda aventura', () => {
+    console.log(adventure.specialists.length);
+    console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(4);
   });
+
   test('depois da terceira aventura', () => {
+    console.log(adventure.specialists.length);
+    console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(3);
   });
+
   test('depois da quarta aventura', () => {
+    console.log(adventure.specialists.length);
+    console.log(adventure.specialists);
     expect(adventure.specialists.length).toBe(2);
   });
+
   test('depois da quinta aventura', () => {
+    console.log(adventure.specialists.length);
+    console.log(adventure.specialists);
+    console.log(`Congratulations ${adventure.specialists[0].nome}, you are the great winner`);
     expect(adventure.specialists.length).toBe(1);
   });
 });
