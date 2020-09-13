@@ -58,6 +58,7 @@ describe('verifica as funções e os mocks', () => {
     expect(mockFunctions.power(0, 0)).toEqual(1);
   });
   test('testa função factorial', () => {
+    // ref: https://www.freecodecamp.org/news/how-to-factorialize-a-number-in-javascript-9263c89a4b38/
     mockFunctions.factorial = jest.fn().mockImplementation((a) => {
       let result = a;
       if (a === 0 || a === 1) 
