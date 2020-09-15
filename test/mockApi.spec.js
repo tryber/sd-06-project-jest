@@ -22,6 +22,10 @@ Dica: Utilizem os métodos jest.fn() ou jest.spyOn().
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
+// 3. Mock APIs
+// Crie um API mock no arquivo test/mockApi.spec.js para que os testes do Jest
+// utilizem retornos de API fixos e independentes de requisições.
+
 describe('verifica o usuário', () => {
   // Crie sua mock da função fetchURL() aqui
   const user = {
