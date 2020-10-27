@@ -18,23 +18,27 @@ PS: Os codinomes dos aventureiros são reais! Tentem descobrir quem é quem!
 
 ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
-
+const { randomAttack } = require('../src/setupTeardown');
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
 
-  test('depois da primeira aventura', () => {
+  test('depois da primeira aventura', async () => {
+    randomAttack();
     expect(adventure.specialists.length).toBe(5);
   });
-  test('depois da segunda aventura', () => {
+  test('depois da segunda aventura', async () => {
+    randomAttack();
     expect(adventure.specialists.length).toBe(4);
   });
-  test('depois da terceira aventura', () => {
+  test('depois da terceira aventura', async () => {
+    randomAttack();
     expect(adventure.specialists.length).toBe(3);
   });
-  test('depois da quarta aventura', () => {
+  test('depois da quarta aventura', async () => {
+    randomAttack();
     expect(adventure.specialists.length).toBe(2);
   });
-  test('depois da quinta aventura', () => {
+  test('depois da quinta aventura', async () => {
+    randomAttack();
     expect(adventure.specialists.length).toBe(1);
   });
 });
